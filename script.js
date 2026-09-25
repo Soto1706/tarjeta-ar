@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Abrir enlace al hacer clic en el botón 3D
   if (btnPortfolio) {
     btnPortfolio.addEventListener('click', () => {
-      window.open('https://github.com', '_blank'); // Reemplaza con tu enlace de GitHub o Portafolio
+      window.open('https://github.com/Soto1706', '_blank');
     });
   }
 });
