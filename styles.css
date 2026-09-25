@@ -1,0 +1,178 @@
+/* --- PALETA DE COLORES TECNOLÓGICA --- */
+:root {
+  --bg-dark: #0f172a;        /* Negro / Azul Oscuro */
+  --card-bg: #1e293b;        /* Gris Oscuro */
+  --accent-blue: #0066ff;    /* Azul Tech */
+  --accent-green: #00e676;   /* Verde Neón */
+  --text-light: #f8fafc;     /* Blanco */
+  --text-muted: #94a3b8;     /* Gris Claro */
+}
+
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #e2e8f0;
+}
+
+/* --- FORMATO IMPRIMIBLE (9x5 cm) --- */
+.print-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.card {
+  width: 9cm;
+  height: 5cm;
+  background: var(--bg-dark);
+  color: var(--text-light);
+  border-radius: 4px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  position: relative;
+  box-sizing: border-box;
+  padding: 0.3cm;
+  overflow: hidden;
+  border-left: 4px solid var(--accent-green);
+}
+
+/* FRENTE */
+.card.front .header h2 {
+  margin: 0;
+  font-size: 12pt;
+  color: var(--text-light);
+}
+
+.card.front .header .subtitle {
+  margin: 2px 0 0 0;
+  font-size: 8pt;
+  color: var(--accent-green);
+  font-weight: bold;
+}
+
+.card.front .content {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.2cm;
+}
+
+.card.front .info p {
+  margin: 2px 0;
+  font-size: 6.5pt;
+  color: var(--text-muted);
+}
+
+.card.front .info strong {
+  color: var(--text-light);
+}
+
+.qr-zone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.qr-zone img {
+  width: 1.3cm;
+  height: 1.3cm;
+  border: 1px solid var(--accent-blue);
+  border-radius: 3px;
+}
+
+.qr-zone span {
+  font-size: 5pt;
+  margin-top: 2px;
+  color: var(--text-muted);
+}
+
+.hiro-container {
+  position: absolute;
+  bottom: 0.2cm;
+  right: 0.3cm;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.hiro-img {
+  width: 0.9cm;
+  height: 0.9cm;
+  border: 1px solid #fff;
+}
+
+.hiro-label {
+  font-size: 5pt;
+  color: var(--accent-green);
+}
+
+/* VUELTA */
+.card.back {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-left: none;
+  border-right: 4px solid var(--accent-blue);
+}
+
+.back-content h3 {
+  margin: 5px 0;
+  font-size: 10pt;
+  color: var(--text-light);
+}
+
+.back-content p {
+  font-size: 6.5pt;
+  color: var(--text-muted);
+  padding: 0 10px;
+}
+
+.badge {
+  display: inline-block;
+  background: var(--accent-blue);
+  color: #fff;
+  font-size: 5pt;
+  padding: 2px 6px;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.tech-stack {
+  font-size: 6pt;
+  color: var(--accent-green);
+  margin-top: 6px;
+}
+
+.footer-link {
+  font-size: 6pt;
+  color: var(--text-muted);
+  margin-top: 6px;
+}
+
+/* --- ESTILOS DE INTERFAZ AR --- */
+#ar-ui {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(15, 23, 42, 0.85);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 12px;
+  z-index: 999;
+  border: 1px solid var(--accent-green);
+  pointer-events: none;
+}
+
+@media print {
+  body {
+    background: white;
+    padding: 0;
+  }
+  #ar-ui {
+    display: none;
+  }
+}

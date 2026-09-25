@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Tarjeta de Presentación 9x5 cm</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body class="print-body">
+
+  <!-- FRENTE DE LA TARJETA -->
+  <div class="card front">
+    <div class="header">
+      <h2>Tu Nombre y Apellido</h2>
+      <p class="subtitle">Futuro Ing. Informático</p>
+    </div>
+    
+    <div class="content">
+      <div class="info">
+        <p><strong>Tel:</strong> +52 55 1234 5678</p>
+        <p><strong>Correo:</strong> tu.correo@email.com</p>
+        <p><strong>LinkedIn:</strong> linkedin.com/in/tu-perfil</p>
+        <p><strong>Portafolio:</strong> tu-portafolio.dev</p>
+      </div>
+      
+      <div class="qr-zone">
+        <!-- Reemplazar el enlace del parámetro 'data=' por la URL donde alojes tu index.html -->
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://incandescent-florentine-5e68ea.netlify.app" alt="Código QR AR">
+        <span>Escanea para AR</span>
+      </div>
+    </div>
+
+    <div class="hiro-container">
+      <img src="https://raw.githubusercontent.com/AR-js-org/AR.js/master/data/images/hiro.png" alt="Marcador Hiro" class="hiro-img">
+      <span class="hiro-label">Marcador AR</span>
+    </div>
+  </div>
+
+  <!-- VUELTA DE LA TARJETA -->
+  <div class="card back">
+    <div class="back-content">
+      <div class="badge">TECNOLOGÍA e INFORMÁTICA</div>
+      <h3>Portafolio de Proyectos</h3>
+      <p>Escanea la imagen o visita el enlace para explorar desarrollos en VR, AR y Desarrollo Web.</p>
+      <div class="tech-stack">
+        <span>Python</span> • <span>WebAR</span> • <span>JavaScript</span> • <span>A-Frame</span>
+      </div>
+      <div class="footer-link">www.tu-portafolio.dev/proyectos</div>
+    </div>
+  </div>
+
+</body>
+</html>
