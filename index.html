@@ -13,7 +13,7 @@
 </head>
 <body style="margin: 0; overflow: hidden;">
 
-  <!-- Indicador en pantalla para el usuario -->
+  <!-- Mensaje de instrucciones movido a la parte inferior para no tapar los datos -->
   <div id="ar-ui">
     <p>Apunta la cámara al <strong>Marcador Hiro</strong></p>
   </div>
@@ -31,27 +31,42 @@
     <!-- Detección del Marcador Hiro -->
     <a-marker preset="hiro" id="hiro-marker">
       
-      <!-- Panel de Fondo Tecnológico (Negro/Azul) -->
-      <a-plane position="0 0 0" rotation="-90 0 0" width="3.6" height="2.2" color="#0F172A" material="opacity: 0.95; transparent: true;"></a-plane>
-      
-      <!-- Borde Verde Neón -->
-      <a-ring position="0 0 0.01" rotation="-90 0 0" radius-inner="1.75" radius-outer="1.8" color="#00E676"></a-ring>
+      <!-- CONTENEDOR PRINCIPAL CON ESCALA AUMENTADA (1.4x) Y ELEVADO EN Z -->
+      <a-entity position="0 0.1 0" scale="1.4 1.4 1.4">
+        
+        <!-- Borde Exterior Verde Neón -->
+        <a-plane position="0 0 -0.01" rotation="-90 0 0" width="4.1" height="2.5" color="#00E676" material="shader: flat;"></a-plane>
 
-      <!-- Foto de Perfil 3D -->
-      <a-image src="#user-photo" position="-1.1 0 0.1" rotation="-90 0 0" width="0.9" height="0.9"></a-image>
+        <!-- Fondo Oscuro de la Tarjeta 3D -->
+        <a-plane position="0 0.01 0" rotation="-90 0 0" width="4.0" height="2.4" color="#0F172A" material="opacity: 0.98; transparent: true; shader: flat;"></a-plane>
 
-      <!-- DATOS PERSONALES EN TEXTO 3D -->
-      <a-text value="Edgar Gabriel Soto Herrera" position="-0.4 0 0.4" rotation="-90 0 0" color="#00E676" width="4.2"></a-text>
-      <a-text value="Ing. Computacion" position="-0.4 0 0.15" rotation="-90 0 0" color="#FFFFFF" width="3.5"></a-text>
-      
-      <a-text value="Tel: +52 492 290 8618" position="-0.4 0 -0.1" rotation="-90 0 0" color="#94A3B8" width="2.8"></a-text>
-      <a-text value="Email: gabrielsohe05@gmail.com" position="-0.4 0 -0.3" rotation="-90 0 0" color="#94A3B8" width="2.6"></a-text>
-      <a-text value="GitHub: github.com/Soto1706" position="-0.4 0 -0.5" rotation="-90 0 0" color="#38BDF8" width="2.6"></a-text>
+        <!-- Foto de Perfil (Izquierda) -->
+        <a-image src="#user-photo" position="-1.25 0.03 0" rotation="-90 0 0" width="1.1" height="1.1"></a-image>
 
-      <!-- Botón interactivo 3D -->
-      <a-box id="btn-portfolio" position="0 0 0.75" rotation="-90 0 0" width="2.0" height="0.35" depth="0.05" color="#0066FF">
-        <a-text value="Ver Portafolio" align="center" position="0 0 0.04" color="#FFFFFF" width="2.5"></a-text>
-      </a-box>
+        <!-- Nombre Principal -->
+        <a-text value="Edgar Gabriel Soto Herrera" position="-0.45 0.03 -0.75" rotation="-90 0 0" color="#00E676" width="5.0"></a-text>
+
+        <!-- Carrera / Profesión -->
+        <a-text value="Ing. en Computacion" position="-0.45 0.03 -0.45" rotation="-90 0 0" color="#FFFFFF" width="4.0"></a-text>
+
+        <!-- Línea Decorativa -->
+        <a-plane position="0.5 0.03 -0.25" rotation="-90 0 0" width="2.1" height="0.02" color="#00E676" material="shader: flat;"></a-plane>
+
+        <!-- Teléfono -->
+        <a-text value="Tel: +52 492 290 8618" position="-0.45 0.03 -0.05" rotation="-90 0 0" color="#E2E8F0" width="3.2"></a-text>
+
+        <!-- Correo -->
+        <a-text value="Email: gabrielsohe05@gmail.com" position="-0.45 0.03 0.2" rotation="-90 0 0" color="#E2E8F0" width="2.9"></a-text>
+
+        <!-- GitHub -->
+        <a-text value="GitHub: github.com/Soto1706" position="-0.45 0.03 0.45" rotation="-90 0 0" color="#38BDF8" width="2.9"></a-text>
+
+        <!-- Botón Interactivo 3D -->
+        <a-box id="btn-portfolio" position="0 0.06 0.85" rotation="-90 0 0" width="2.3" height="0.38" depth="0.06" color="#0066FF">
+          <a-text value="VER PORTAFOLIO" align="center" position="0 0 0.04" color="#FFFFFF" width="3.2"></a-text>
+        </a-box>
+
+      </a-entity>
 
     </a-marker>
 

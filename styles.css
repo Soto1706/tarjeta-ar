@@ -14,7 +14,7 @@ body {
   background-color: #e2e8f0;
 }
 
-/* --- FORMATO IMPRIMIBLE (9x5 cm) --- */
+/* --- FORMATO IMPRIMIBLE TARJETA (9x5 cm) --- */
 .print-body {
   display: flex;
   flex-direction: column;
@@ -37,7 +37,7 @@ body {
   border-left: 4px solid var(--accent-green);
 }
 
-/* DISEÑO MINIMALISTA FRENTE */
+/* FRENTE MINIMALISTA */
 .card.front.minimalist {
   display: flex;
   flex-direction: column;
@@ -143,22 +143,28 @@ body {
   margin-top: 6px;
 }
 
-/* --- INTERFAZ CÁMARA AR --- */
+/* --- INTERFAZ CÁMARA AR (AVISO ABAJO PARA NO TAPAR DATO) --- */
 #ar-ui {
   position: fixed;
-  top: 10px;
+  bottom: 25px; /* Movido a la parte inferior */
   left: 50%;
   transform: translateX(-50%);
-  background: rgba(15, 23, 42, 0.85);
+  background: rgba(15, 23, 42, 0.9);
   color: white;
-  padding: 8px 16px;
+  padding: 8px 18px;
   border-radius: 20px;
-  font-size: 12px;
+  font-size: 13px;
   z-index: 999;
   border: 1px solid var(--accent-green);
   pointer-events: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
 }
 
+#ar-ui p {
+  margin: 0;
+}
+
+/* --- AJUSTE DE VIDEO CÁMARA EN MÓVILES --- */
 video#arjs-video {
   object-fit: cover !important;
   width: 100vw !important;
