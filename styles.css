@@ -37,56 +37,48 @@ body {
   border-left: 4px solid var(--accent-green);
 }
 
-/* FRENTE */
-.card.front .header h2 {
-  margin: 0;
-  font-size: 12pt;
-  color: var(--text-light);
-}
-
-.card.front .header .subtitle {
-  margin: 2px 0 0 0;
-  font-size: 8pt;
-  color: var(--accent-green);
-  font-weight: bold;
-}
-
-.card.front .content {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 0.2cm;
-}
-
-.card.front .info p {
-  margin: 2px 0;
-  font-size: 6.5pt;
-  color: var(--text-muted);
-}
-
-.card.front .info strong {
-  color: var(--text-light);
-}
-
-.qr-zone {
+/* DISEÑO MINIMALISTA FRENTE */
+.card.front.minimalist {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
 }
 
-.qr-zone img {
-  width: 1.3cm;
-  height: 1.3cm;
-  border: 1px solid var(--accent-blue);
-  border-radius: 3px;
+.header-minimal {
+  text-align: center;
 }
 
-.qr-zone span {
+.badge-tech {
+  background: rgba(0, 230, 118, 0.15);
+  color: var(--accent-green);
+  border: 1px solid var(--accent-green);
   font-size: 5pt;
-  margin-top: 2px;
-  color: var(--text-muted);
+  font-weight: bold;
+  padding: 2px 8px;
+  border-radius: 10px;
+  display: inline-block;
 }
 
-.hiro-container {
+.scan-instruction {
+  margin: 3px 0 0 0;
+  font-size: 7pt;
+  letter-spacing: 1px;
+  color: var(--text-light);
+  font-weight: bold;
+}
+
+/* QR GIGANTE CENTRADO */
+.qr-zone-large img {
+  width: 2.6cm;
+  height: 2.6cm;
+  border: 2px solid var(--accent-blue);
+  border-radius: 6px;
+  background: white;
+  padding: 3px;
+}
+
+.hiro-container-card {
   position: absolute;
   bottom: 0.2cm;
   right: 0.3cm;
@@ -106,7 +98,7 @@ body {
   color: var(--accent-green);
 }
 
-/* VUELTA */
+/* VUELTA DE LA TARJETA */
 .card.back {
   background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
   display: flex;
@@ -151,7 +143,7 @@ body {
   margin-top: 6px;
 }
 
-/* --- ESTILOS DE INTERFAZ AR --- */
+/* --- INTERFAZ CÁMARA AR --- */
 #ar-ui {
   position: fixed;
   top: 10px;
@@ -167,7 +159,6 @@ body {
   pointer-events: none;
 }
 
-/* --- CORRECCIÓN DE CÁMARA MÓVIL (ZOOM / BORROSIDAD) --- */
 video#arjs-video {
   object-fit: cover !important;
   width: 100vw !important;
