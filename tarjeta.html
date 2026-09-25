@@ -9,21 +9,25 @@
 <body class="print-body">
 
   <!-- FRENTE DE LA TARJETA (9x5 cm) -->
-  <div class="card front minimalist">
+  <div class="card front minimalist-split">
     <div class="header-minimal">
       <div class="badge-tech">EXPERIENCIA XR</div>
-      <p class="scan-instruction">ESCANEA EL CÓDIGO QR</p>
+      <p class="scan-instruction">ESCANEA Y APUNTA A LA TARJETA</p>
     </div>
     
-    <!-- CÓDIGO QR GIGANTE -->
-    <div class="qr-zone-large">
-      <img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https://Soto1706.github.io/tarjeta-ar/" alt="Código QR AR">
-    </div>
+    <!-- CONTENEDOR LADO A LADO -->
+    <div class="split-container">
+      <!-- LADO IZQUIERDO: CÓDIGO QR -->
+      <div class="split-box">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https://Soto1706.github.io/tarjeta-ar/" alt="Código QR AR" class="qr-img">
+        <span>1. Escanea QR</span>
+      </div>
 
-    <!-- MARCADOR HIRO INTEGRADO -->
-    <div class="hiro-container-card">
-      <img src="https://raw.githubusercontent.com/AR-js-org/AR.js/master/data/images/hiro.png" alt="Marcador Hiro" class="hiro-img">
-      <span class="hiro-label">Marcador AR</span>
+      <!-- LADO DERECHO: MARCADOR HIRO -->
+      <div class="split-box">
+        <img src="https://raw.githubusercontent.com/AR-js-org/AR.js/master/data/images/hiro.png" alt="Marcador Hiro" class="hiro-img-large">
+        <span class="hiro-label">2. Enfoca Marcador</span>
+      </div>
     </div>
   </div>
 

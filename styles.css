@@ -37,12 +37,13 @@ body {
   border-left: 4px solid var(--accent-green);
 }
 
-/* FRENTE MINIMALISTA */
-.card.front.minimalist {
+/* DISEÑO DIVIDIDO (LADO A LADO) */
+.card.front.minimalist-split {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  padding: 0.3cm 0.4cm;
 }
 
 .header-minimal {
@@ -61,40 +62,53 @@ body {
 }
 
 .scan-instruction {
-  margin: 3px 0 0 0;
-  font-size: 7pt;
-  letter-spacing: 1px;
+  margin: 2px 0 0 0;
+  font-size: 6.5pt;
+  letter-spacing: 0.5px;
   color: var(--text-light);
   font-weight: bold;
 }
 
-/* QR GIGANTE CENTRADO */
-.qr-zone-large img {
-  width: 2.6cm;
-  height: 2.6cm;
-  border: 2px solid var(--accent-blue);
-  border-radius: 6px;
-  background: white;
-  padding: 3px;
+/* CONTENEDOR Y TAMAÑOS DE IMÁGENES GIGANTES */
+.split-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 3.5cm;
 }
 
-.hiro-container-card {
-  position: absolute;
-  bottom: 0.2cm;
-  right: 0.3cm;
+.split-box {
   display: flex;
+  flex-direction: column;
   align-items: center;
   gap: 4px;
 }
 
-.hiro-img {
-  width: 0.9cm;
-  height: 0.9cm;
-  border: 1px solid #fff;
+.split-box .qr-img {
+  width: 2.3cm;
+  height: 2.3cm;
+  border: 2px solid var(--accent-blue);
+  border-radius: 6px;
+  background: white;
+  padding: 2px;
 }
 
-.hiro-label {
-  font-size: 5pt;
+.split-box .hiro-img-large {
+  width: 2.3cm;
+  height: 2.3cm;
+  border: 2px solid white;
+  border-radius: 4px;
+  box-shadow: 0 0 8px rgba(0, 230, 118, 0.2);
+}
+
+.split-box span {
+  font-size: 5.5pt;
+  color: var(--text-muted);
+  font-weight: bold;
+}
+
+.split-box .hiro-label {
   color: var(--accent-green);
 }
 
@@ -143,10 +157,10 @@ body {
   margin-top: 6px;
 }
 
-/* --- INTERFAZ CÁMARA AR (AVISO ABAJO PARA NO TAPAR DATO) --- */
+/* --- INTERFAZ CÁMARA AR --- */
 #ar-ui {
   position: fixed;
-  bottom: 25px; /* Movido a la parte inferior */
+  bottom: 25px;
   left: 50%;
   transform: translateX(-50%);
   background: rgba(15, 23, 42, 0.9);
@@ -164,7 +178,6 @@ body {
   margin: 0;
 }
 
-/* --- AJUSTE DE VIDEO CÁMARA EN MÓVILES --- */
 video#arjs-video {
   object-fit: cover !important;
   width: 100vw !important;
