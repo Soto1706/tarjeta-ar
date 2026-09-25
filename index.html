@@ -18,53 +18,47 @@
     <p>Apunta la cámara al <strong>Marcador Hiro</strong></p>
   </div>
 
-  <!-- Escena de Realidad Aumentada -->
+  <!-- Escena de Realidad Aumentada con Buffer Logarítmico para evitar parpadeos WebGL -->
   <a-scene 
     embedded 
     renderer="logarithmicDepthBuffer: true; antialias: true; precision: high;"
     arjs="sourceType: webcam; debugUIEnabled: false; sourceWidth: 1280; sourceHeight: 960; displayWidth: 1280; displayHeight: 960;">
     
-    <!-- TU FOTO PERSONAL SUBIDA A GITHUB -->
+    <!-- Recurso de la foto de perfil -->
     <a-assets>
-      <img id="user-photo" src="foto.jpg">
+      <img id="user-photo" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300">
     </a-assets>
 
-    <!-- Detección del Marcador Hiro con filtro de suavizado para evitar inclinaciones -->
-    <a-marker 
-      preset="hiro" 
-      id="hiro-marker" 
-      smooth="true" 
-      smoothCount="10" 
-      smoothTolerance="0.01" 
-      smoothThreshold="5">
+    <!-- Detección del Marcador Hiro -->
+    <a-marker preset="hiro" id="hiro-marker">
       
-      <!-- CONTENEDOR PRINCIPAL CON ESCALA (1.4x) -->
+      <!-- CONTENEDOR PRINCIPAL CON ESCALA (1.4x) Y SEPARACIÓN MULTINIVEL -->
       <a-entity position="0 0.1 0" scale="1.4 1.4 1.4">
         
-        <!-- BASE EXTERIOR VERDE NEÓN (Y = 0) -->
+        <!-- CAPA 0: BASE EXTERIOR VERDE NEÓN (Y = 0) -->
         <a-plane position="0 0 0" rotation="-90 0 0" width="4.1" height="2.5" color="#00E676" material="shader: flat; opacity: 1.0; transparent: false;"></a-plane>
 
-        <!-- FONDO OSCURO SÓLIDO (Y = 0.08) -->
+        <!-- CAPA 1: FONDO OSCURO SÓLIDO (Y = 0.08) -->
         <a-plane position="0 0.08 0" rotation="-90 0 0" width="3.98" height="2.38" color="#0F172A" material="shader: flat; opacity: 1.0; transparent: false;"></a-plane>
 
-        <!-- FOTO DE PERFIL (Y = 0.18) -->
+        <!-- CAPA 2: FOTO DE PERFIL (Y = 0.18) -->
         <a-image src="#user-photo" position="-1.2 0.18 0" rotation="-90 0 0" width="1.1" height="1.1"></a-image>
 
-        <!-- NOMBRE PRINCIPAL (Y = 0.18) -->
+        <!-- CAPA 2: NOMBRE PRINCIPAL (Y = 0.18) -->
         <a-text value="Edgar Gabriel Soto Herrera" position="-0.4 0.18 -0.75" rotation="-90 0 0" color="#00E676" width="5.0"></a-text>
 
-        <!-- CARRERA (Y = 0.18) -->
+        <!-- CAPA 2: CARRERA (Y = 0.18) -->
         <a-text value="Ing. en Computacion" position="-0.4 0.18 -0.45" rotation="-90 0 0" color="#FFFFFF" width="4.0"></a-text>
 
-        <!-- LÍNEA DECORATIVA (Y = 0.18) -->
+        <!-- CAPA 2: LÍNEA DECORATIVA (Y = 0.18) -->
         <a-plane position="0.55 0.18 -0.25" rotation="-90 0 0" width="2.0" height="0.02" color="#00E676" material="shader: flat;"></a-plane>
 
-        <!-- DATOS DE CONTACTO (Y = 0.18) -->
+        <!-- CAPA 2: DATOS DE CONTACTO (Y = 0.18) -->
         <a-text value="Tel: +52 492 290 8618" position="-0.4 0.18 -0.05" rotation="-90 0 0" color="#E2E8F0" width="3.2"></a-text>
         <a-text value="Email: gabrielsohe05@gmail.com" position="-0.4 0.18 0.2" rotation="-90 0 0" color="#E2E8F0" width="2.9"></a-text>
         <a-text value="GitHub: github.com/Soto1706" position="-0.4 0.18 0.45" rotation="-90 0 0" color="#38BDF8" width="2.9"></a-text>
 
-        <!-- BOTÓN INTERACTIVO (Y = 0.28) -->
+        <!-- CAPA 3: BOTÓN INTERACTIVO (Y = 0.28) -->
         <a-box id="btn-portfolio" position="0 0.28 0.85" rotation="-90 0 0" width="2.3" height="0.38" depth="0.04" color="#0066FF">
           <a-text value="VER PORTAFOLIO" align="center" position="0 0 0.03" color="#FFFFFF" width="3.2"></a-text>
         </a-box>
